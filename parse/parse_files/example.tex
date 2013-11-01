@@ -1,0 +1,53 @@
+\clearpage
+\section*{Instruções}
+Cada questão possui: 
+  \begin{itemize}
+  \item instruções de implementação, 
+  \item um prótótipo da função a ser implementada e 
+  \item uma função de teste.
+  \end{itemize}
+
+                      
+Seja o seguinte exemplo:
+\subsection*{Questão Exemplo}
+\begin{verbatim}
+Objetivo: Somar dois números inteiros.
+Entrada : Dois números inteiros.
+Saída   : A soma dos números.
+\end{verbatim}
+
+\begin{lstlisting}
+ int soma (int num1, num2);
+ void  test()
+ {
+    puts(soma(6, 4) == 10);
+    puts(soma(3,-4) == -1);
+ }
+\end{lstlisting}
+
+Você deve implementar a função soma e executar o código de teste. O ambiente completo do arquivo main.c seria
+algo parecido com o exemplo a seguir.
+
+\begin{lstlisting}
+#include <stdio.h>
+
+ int soma (int num1, num2)
+ {
+      return num1 + num2; //essa aqui é a sua implementacao
+ }
+ 
+ void  test()
+ {
+    puts(soma(6, 4) == 10);
+    puts(soma(3,-4) == -1);
+ }
+ 
+ int main()
+ {
+    test();//aqui voce chama o codigo de teste.
+    return 1;
+ }
+\end{lstlisting}
+
+Se sua implementação da função estiver correta, como aconteceu na função soma, será impresso o número 1 na tela. Caso contrário, 
+será impresso o número 0. Assim, fica mais fácil de acompanhar em quais casos seu código está falhando.
