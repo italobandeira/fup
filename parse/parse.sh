@@ -23,6 +23,8 @@ sed -i 's/S\*\//}/' __code__
 sed -i 's/\/\*Q/\\subsection{/'  __code__
 sed -i 's/Q\*\//}/' __code__
 
+#sed -i 's/\/\*T/\\begin{lstlisting}[style=cc]/'  __code__
+#sed -i 's/T\*\//\\end{lstlisting}/'  __code__
 sed -i 's/\/\*T/\\begin{verbatim}/'  __code__
 sed -i 's/T\*\//\\end{verbatim}/'  __code__
 
@@ -30,13 +32,13 @@ sed -i 's/\/\/CB/\\begin{lstlisting}/'  __code__
 sed -i 's/\/\/CE/\\end{lstlisting}/'  __code__
 
 echo '\documentclass[11 pt]{article}' > __code.tex
-cat parse_files/preambulo.tex >> __code.tex
+cat config/preambulo.tex >> __code.tex
 echo '\begin{document}' >> __code.tex
-cat parse_files/header.tex >> __code.tex
-cat parse_files/example.tex >> __code.tex
+cat config/header.tex >> __code.tex
+cat config/example.tex >> __code.tex
 
 cat __code__ >> __code.tex
 echo '\end{document}' >> __code.tex
 
-pdflatex __code.tex >> /dev/null
+pdflatex __code.tex 
 rm __code__ __code.tex *.aux *.log
