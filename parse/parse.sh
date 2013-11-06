@@ -40,5 +40,5 @@ cat config/example.tex >> __code.tex
 cat __code__ >> __code.tex
 echo '\end{document}' >> __code.tex
 
-pdflatex __code.tex 
+pdflatex --interaction=nonstopmode __code.tex  
 rm __code__ __code.tex *.aux *.log

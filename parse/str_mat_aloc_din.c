@@ -50,15 +50,15 @@ void print_mat_diz(int **matd, int nlin, int ncol);
 //CE
 
 /*T
-É isso mesmo, matrizes estáticas só podem ser passadas por parâmtros se 
-fixarmos o tamanhos das colunas. O valor 30 não pode ser uma variável 
-dinâmica. Diferente do caso da matriz dinâmica que pode ter ambas as 
+É isso mesmo, matrizes estáticas só podem ser passadas por parâmtros se
+fixarmos o tamanhos das colunas. O valor 30 não pode ser uma variável
+dinâmica. Diferente do caso da matriz dinâmica que pode ter ambas as
 dimensões passadas dinâmicamente.
 
-Uma forma de contornar essa limitação é tranformar uma matriz em um vetor 
+Uma forma de contornar essa limitação é tranformar uma matriz em um vetor
 simples e passá-las por parâmetro como vetor.
 
-Em C, vetores e matrizes possuem a mesma representação interna. Um vetor 
+Em C, vetores e matrizes possuem a mesma representação interna. Um vetor
 pode ser tratado como uma matriz e vice-versa.
 T*/
 
@@ -85,7 +85,17 @@ T*/
 
 //CB
 int elem(int *vet, int ncol, int y, int x);
-void test();
+void test()
+{
+    //criando matriz de 4 por 3
+    int mat[][3] ={{1,2,3},
+                   {4,5,6},
+                   {7,5,6},
+                   {9,9,2}};
+    puts(elem(&mat[0][0], 3, 2, 0) == 7);//elemento y2 e x0
+    puts(elem(&mat[0][0], 3, 0, 0) == 1);
+    puts(elem(&mat[0][0], 3, 3, 2) == 2);
+}
 //CE
 
 /*Q Imprimindo Matriz Q*/
@@ -113,6 +123,8 @@ T*/
 int * elem_pos(int *vet, int ncol, int x, int y);
 void test();
 //CE
+
+/*S Usando Mymat S*/
 
 /*Q Transformando em Estrutura Q*/
 
